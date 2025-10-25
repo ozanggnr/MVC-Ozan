@@ -29,5 +29,7 @@ namespace APP.Models
 
         public string OverallGradeF { get; set; } //  95.50
 
+        public string IsGraduatedF { get; set; } //  
+
     }
 }

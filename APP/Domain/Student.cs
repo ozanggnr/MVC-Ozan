@@ -23,6 +23,6 @@ namespace APP.Domain
 
         public bool IsGraduated { get; set; }
 
-  
+        public bool IsGraduatedF { get; set; }
     }
 }
