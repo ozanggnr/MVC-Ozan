@@ -1,4 +1,4 @@
-﻿using CORE.APP.Domain;
+﻿using CORE.APP.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APP.Domain
+namespace APP.Models
 {
-    public class Student:Entity
+    public class StudentRequest : Request
     {
-
-        [Required,StringLength(50)]
-        public string Name{ get; set; }
+        [Required, StringLength(50)]
+        public string Name { get; set; }
 
         [Required, StringLength(50)]
         public string Surname { get; set; }
@@ -22,7 +21,5 @@ namespace APP.Domain
         public decimal? OverallGrade { get; set; }
 
         public bool IsGraduated { get; set; }
-
-  
     }
 }

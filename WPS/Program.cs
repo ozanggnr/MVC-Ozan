@@ -1,7 +1,13 @@
+using APP.Domain;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString(nameof(Db));
+builder.Services.AddDbContext<Db>(options => options.UseSqlite(connectionString));
 
 var app = builder.Build();
 
