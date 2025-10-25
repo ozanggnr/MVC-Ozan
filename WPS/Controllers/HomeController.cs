@@ -13,14 +13,14 @@ namespace WPS.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index() 
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(string name)// Home/Privacy
         {
-            return View();
+            return View("Privacy", name);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

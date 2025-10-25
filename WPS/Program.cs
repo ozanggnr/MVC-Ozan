@@ -1,4 +1,7 @@
 using APP.Domain;
+using APP.Models;
+using APP.Services;
+using CORE.APP.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 var connectionString = builder.Configuration.GetConnectionString(nameof(Db));
-builder.Services.AddDbContext<Db>(options => options.UseSqlite(connectionString));
+builder.Services.AddDbContext<DbContext,Db>(options => options.UseSqlite(connectionString));
+
+
+builder.Services.AddScoped < IService<StudentRequest,StudentResponse>, StudentService>();
 
 var app = builder.Build();
 
